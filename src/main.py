@@ -1,7 +1,10 @@
 import cv2
+from arg_parser import init_arg_parser
+
+parser = init_arg_parser().parse_args()
 
 # Load the image
-image = cv2.imread('./example/monkey.png')
+image = cv2.imread(parser.path)
 
 if image is None:
   print('Could not open or find the image')
@@ -16,3 +19,4 @@ else:
   # Wait for a key press and close the image windows
   cv2.waitKey(0)
   cv2.destroyAllWindows()
+  
