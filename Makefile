@@ -31,3 +31,7 @@ run-fourier-high:
 run-fourier-band:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --fourier band --output $(OUTPUT)/fourier-band.png
 	@echo "Applied Band-pass filter on $(DEFAULT_IMAGE_PATH) using Fourier Transform"
+
+run-multiple-filters:
+	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --blur median --kernel 25 --fourier low --output $(OUTPUT)/multiple-filters.png
+	@echo "Applied Gaussian blur, Canny edge detection and Low-pass filter on $(DEFAULT_IMAGE_PATH)"
