@@ -1,6 +1,7 @@
 import cv2
 from arg_parser import init_arg_parser
 from filters.blur import blur_manager
+from filters.edge import edge_detection_manager
 
 parser = init_arg_parser().parse_args()
 
@@ -11,12 +12,13 @@ if image is None:
   raise ValueError('Image not found.')
 else:
   # Apply the filters
-  blurred_image = blur_manager(image, parser.blur, parser)
+  image = blur_manager(image, parser.blur, parser)
+  image = edge_detection_manager(image, parser.edge)
 
   # Save the output image
   if parser.output:
-    cv2.imwrite(parser.output, blurred_image)
+    cv2.imwrite(parser.output, image)
   else:
-    cv2.imwrite('output.jpg', blurred_image)
+    cv2.imwrite('output.jpg', image)
 
   
