@@ -1,5 +1,6 @@
 import cv2
 from arg_parser import init_arg_parser
+from filters.blur import blur_manager
 
 parser = init_arg_parser().parse_args()
 
@@ -7,10 +8,10 @@ parser = init_arg_parser().parse_args()
 image = cv2.imread(parser.path)
 
 if image is None:
-  print('Could not open or find the image')
+  raise ValueError('Image not found.')
 else:
-  # Apply Gaussian blur with a kernel size of (15, 15)
-  blurred_image = cv2.GaussianBlur(image, (15, 15), 0)
+  # Apply the filters
+  blurred_image = blur_manager(image, parser.blur, parser)
 
   # Save the output image
   if parser.output:
