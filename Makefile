@@ -6,7 +6,7 @@ DEFAULT_IMAGE_PATH = ./example/monkey.png
 
 OUTPUT = ./example/output
 
-run-all: run-gaussian run-median run-canny run-fourier-low run-fourier-high run-fourier-band
+run-all: run-gaussian run-median run-canny run-fourier-low run-fourier-high run-fourier-band run-noise-gaussian run-noise-salt-pepper run-multiple-filters
 
 run-gaussian:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --blur gaussian --kernel 15 --output $(OUTPUT)/blur-gaussian.png
@@ -32,6 +32,14 @@ run-fourier-band:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --fourier band --output $(OUTPUT)/fourier-band.png
 	@echo "Applied Band-pass filter on $(DEFAULT_IMAGE_PATH) using Fourier Transform"
 
+run-noise-gaussian:
+	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --noise gaussian --output $(OUTPUT)/noise-gaussian.png
+	@echo "Applied Gaussian noise on $(DEFAULT_IMAGE_PATH)"
+
+run-noise-salt-pepper:
+	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --noise salt_pepper --output $(OUTPUT)/noise-salt-pepper.png
+	@echo "Applied Salt and Pepper noise on $(DEFAULT_IMAGE_PATH)"
+
 run-multiple-filters:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --blur median --kernel 25 --fourier low --output $(OUTPUT)/multiple-filters.png
-	@echo "Applied Gaussian blur, Canny edge detection and Low-pass filter on $(DEFAULT_IMAGE_PATH)"
+	@echo "Applied Gaussian blur and Low-pass filter on $(DEFAULT_IMAGE_PATH)"

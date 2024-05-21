@@ -92,7 +92,7 @@ def band_pass_filter(image, low_cutoff = 5, high_cutoff = 30):
   return img_back.astype(np.uint8)
 
 # Dictionary to map filter types to their respective functions
-fourierMap = {
+fourier_map = {
   'low': ideal_low_pass_filter,
   'high': ideal_high_pass_filter,
   'band': band_pass_filter
@@ -103,7 +103,7 @@ def fourier_transform_manager(image, filter_type = None):
   if filter_type is None:
     return image
   
-  if filter_type not in fourierMap:
-    raise ValueError(f'Filter type {filter_type} not supported. Supported filters are {list(fourierMap.keys())}')
+  if filter_type not in fourier_map:
+    raise ValueError(f'Filter type {filter_type} not supported. Supported filters are {list(fourier_map.keys())}')
 
-  return fourierMap[filter_type](image)
+  return fourier_map[filter_type](image)
