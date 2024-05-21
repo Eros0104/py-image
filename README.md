@@ -48,19 +48,19 @@ O script utiliza argumentos de linha de comando para especificar a imagem de ent
 Aplicar um filtro de desfoque gaussiano com um kernel de 15x15:
 
 ```bash
-python main.py --path input.jpg --blur gaussian --kernel 15 --output output.jpg
+python ./src/main.py --path input.jpg --blur gaussian --kernel 15 --output output.jpg
 ```
 
 Aplicar um filtro de detecção de bordas Canny:
 
 ```bash
-python main.py --path input.jpg --edge canny --output output.jpg
+python ./src/main.py --path input.jpg --edge canny --output output.jpg
 ```
 
 Aplicar um filtro de Transformada de Fourier passa-baixa:
 
 ```bash
-python main.py --path input.jpg --fourier low --output output.jpg
+python ./src/main.py --path input.jpg --fourier low --output output.jpg
 ```
 
 ### Makefile
