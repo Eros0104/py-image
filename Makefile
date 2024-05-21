@@ -6,7 +6,7 @@ DEFAULT_IMAGE_PATH = ./example/monkey.png
 
 OUTPUT = ./example/output
 
-run-all: run-gaussian run-median run-canny run-fourier-low run-fourier-high run-fourier-band run-noise-gaussian run-noise-salt-pepper run-multiple-filters run-multiple-filter-2
+run-all: run-gaussian run-median run-canny run-fourier-low run-fourier-high run-noise-gaussian run-noise-salt-pepper run-multiple-filters run-multiple-filter-2
 
 run-gaussian:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --blur gaussian --kernel 15 --output $(OUTPUT)/blur-gaussian.png
@@ -27,10 +27,6 @@ run-fourier-low:
 run-fourier-high:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --fourier high --output $(OUTPUT)/fourier-high.png
 	@echo "Applied High-pass filter on $(DEFAULT_IMAGE_PATH) using Fourier Transform"
-
-run-fourier-band:
-	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --fourier band --output $(OUTPUT)/fourier-band.png
-	@echo "Applied Band-pass filter on $(DEFAULT_IMAGE_PATH) using Fourier Transform"
 
 run-noise-gaussian:
 	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --noise gaussian --mean 20 --stddev 20 --output $(OUTPUT)/noise-gaussian.png

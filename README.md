@@ -31,7 +31,7 @@ O script utiliza argumentos de linha de comando para especificar a imagem de ent
 - --edge: Tipo de filtro de detecção de bordas a ser aplicado. Atualmente, apenas **canny** é suportado.
 
 #### Transformada de Fourier
-- --fourier: Tipo de filtro de Transformada de Fourier a ser aplicado. As opções são **low**, **high** ou **band**.
+- --fourier: Tipo de filtro de Transformada de Fourier a ser aplicado. As opções são **low** ou **high**.
 
 #### Ruído
 - --noise: Tipo de ruído a ser aplicado. As opções são **gaussian** ou **salt_pepper**.

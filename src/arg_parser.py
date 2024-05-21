@@ -13,7 +13,7 @@ def init_arg_parser():
   parser.add_argument('--edge', type=str, choices=['canny'], help='Edge detection filter to apply to the image.')
 
   # Fourier Transform filter arguments
-  parser.add_argument('--fourier', type=str, choices=['low', 'high', 'band'], help='Fourier Transform filter to apply to the image.')
+  parser.add_argument('--fourier', type=str, choices=['low', 'high'], help='Fourier Transform filter to apply to the image.')
 
   # Noise filter arguments
   parser.add_argument('--noise', type=str, choices=['gaussian', 'salt_pepper'], help='Noise filter to apply to the image.')
