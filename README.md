@@ -33,6 +33,13 @@ O script utiliza argumentos de linha de comando para especificar a imagem de ent
 #### Transformada de Fourier
 - --fourier: Tipo de filtro de Transformada de Fourier a ser aplicado. As opções são **low**, **high** ou **band**.
 
+#### Ruído
+- --noise: Tipo de ruído a ser aplicado. As opções são **gaussian** ou **salt_pepper**.
+- --mean: Valor médio para o filtro de ruído gaussiano.
+- --stddev: Valor de desvio padrão para o filtro de ruído gaussiano.
+- --salt_prob: Probabilidade de ruído de sal para o filtro de ruído sal e pimenta.
+- --pepper_prob: Probabilidade de ruído de pimenta para o filtro de ruído sal e pimenta.
+
 #### Outros
 - --output: Caminho para salvar a imagem de saída.
 

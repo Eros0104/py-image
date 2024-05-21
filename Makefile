@@ -33,7 +33,7 @@ run-fourier-band:
 	@echo "Applied Band-pass filter on $(DEFAULT_IMAGE_PATH) using Fourier Transform"
 
 run-noise-gaussian:
-	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --noise gaussian --output $(OUTPUT)/noise-gaussian.png
+	@$(PYTHON) $(MAIN) --path $(DEFAULT_IMAGE_PATH) --noise gaussian --mean 20 --stddev 20 --output $(OUTPUT)/noise-gaussian.png
 	@echo "Applied Gaussian noise on $(DEFAULT_IMAGE_PATH)"
 
 run-noise-salt-pepper:
