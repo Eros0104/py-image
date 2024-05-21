@@ -13,8 +13,8 @@ def init_arg_parser():
   # Fourier Transform filter arguments
   parser.add_argument('--fourier', type=str, choices=['low', 'high', 'band'], help='Fourier Transform filter to apply to the image.')
 
-  parser.add_argument('--sigma-color', type=float, help='Sigma color for the bilateral filter.')
-  parser.add_argument('--sigma-space', type=float, help='Sigma space for the bilateral filter.')
+  # parser.add_argument('--sigma-color', type=float, help='Sigma color for the bilateral filter.')
+  # parser.add_argument('--sigma-space', type=float, help='Sigma space for the bilateral filter.')
   parser.add_argument('--output', type=str, help='Path to save the output image.')
 
   return parser
