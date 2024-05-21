@@ -6,11 +6,12 @@ def is_even(number):
 # Function to apply Gaussian blur to an image
 def gaussian_blur(image, params):
   kernel_size = params.kernel if params.kernel else 51
+  sigma = params.sigma if params.sigma else 0
 
   if is_even(kernel_size):
     kernel_size += 1
 
-  return cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
+  return cv2.GaussianBlur(image, (kernel_size, kernel_size), sigma)
 
 # Function to apply median blur to an image
 def median_blur(image, params):

@@ -19,11 +19,21 @@ O script utiliza argumentos de linha de comando para especificar a imagem de ent
 
 ### Argumentos
 
+#### Obrigatórios 
 - --path: (Obrigatório) Caminho para a imagem de entrada.
-- --blur: Tipo de filtro de desfoque a ser aplicado. As opções são gaussian ou median.
+
+#### Blur
+- --blur: Tipo de filtro de desfoque a ser aplicado. As opções são **gaussian** ou **median**.
 - --kernel: Tamanho do kernel para o filtro de desfoque. Por exemplo, --kernel 15 para um kernel de 15x15.
-- --edge: Tipo de filtro de detecção de bordas a ser aplicado. Atualmente, apenas canny é suportado.
-- --fourier: Tipo de filtro de Transformada de Fourier a ser aplicado. As opções são low, high ou band.
+- --sigma: Desvio padrão do filtro de desfoque gaussiano.
+
+#### Edge Detection
+- --edge: Tipo de filtro de detecção de bordas a ser aplicado. Atualmente, apenas **canny** é suportado.
+
+#### Transformada de Fourier
+- --fourier: Tipo de filtro de Transformada de Fourier a ser aplicado. As opções são **low**, **high** ou **band**.
+
+#### Outros
 - --output: Caminho para salvar a imagem de saída.
 
 ### Exemplos
